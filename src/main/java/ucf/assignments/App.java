@@ -5,9 +5,7 @@
 
 package ucf.assignments;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.prefs.Preferences;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -25,7 +23,7 @@ public class App extends Application {
     private BorderPane rootLayout;
 
     // The data as an observable list of Tasks
-    private ObservableList<Task> taskData = FXCollections.observableArrayList();
+    private final ObservableList<Task> taskData = FXCollections.observableArrayList();
 
     // Constructor
     public App() {
