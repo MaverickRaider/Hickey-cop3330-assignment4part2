@@ -1,0 +1,55 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App {
+Start()
+Main()
+initRootLayout()
+showApp()
+showTaskEditor()
+getPrimaryStage()
+}
+
+class AppController {
+model : Task
+initialize()
+setMainApp()
+showTaskDetails()
+newButtonClicked()
+editButtonClicked()
+deleteButtonClicked()
+}
+
+class Task {
+taskLabel
+description
+dueDate
+taskCompleted
+status
+taskStatus
+}
+
+class DateUtil {
+}
+
+class TaskEditController {
+initialize()
+setDialogStage()
+setTask()
+isOkClicked()
+handleOk()
+handleCancel()
+isInputValid()
+}
+
+org.javafx.Application <|-- App
+App -- AppController
+App -- TaskEditController
+TaskEditController -- DateUtil
+AppController -- Task
+TaskEditController -- Task
+
+
+
+
+@enduml
